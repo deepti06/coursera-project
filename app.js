@@ -1,7 +1,10 @@
 (function(){
     'use strict'
-    angular.module('Assign1',[])
-    .controller('MyController',function($scope){
+    angular.module('LunchCheck',[])
+    .controller('LunchCheckController',DIController);
+
+    DIController.$inject = ['$scope'];
+    function DIController($scope){
         $scope.dishes = "";
         $scope.message = "";
         $scope.checkCalorie = function(){
@@ -16,5 +19,5 @@
                 msg ="Too much!";
             $scope.message = msg;
         }
-    });
+    }
 })();
