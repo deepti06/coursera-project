@@ -1,12 +1,20 @@
-
-var input = document.querySelector("input");
-
-input.addEventListener("keyup",function(){
-    var str = input.value; 
-    var num=0;
-    for(var i=0;i<str.length;i++){
-        num += str.charCodeAt(i);
-    }
-    var display = document.querySelector("#v1");
-    v1.textContent = num;
-});
+(function(){
+    'use strict'
+    angular.module('Assign1',[])
+    .controller('MyController',function($scope){
+        $scope.dishes = "";
+        $scope.message = "";
+        $scope.checkCalorie = function(){
+            var str = $scope.dishes;
+            var msg="";
+            var arr = str.split(',');
+            if(str == "")
+                msg = "Please enter data first";
+            else if(arr.length <=3)
+                msg ="Enjoy!";
+            else
+                msg ="Too much!";
+            $scope.message = msg;
+        }
+    });
+})();
